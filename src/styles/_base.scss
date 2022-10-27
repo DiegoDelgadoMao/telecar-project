@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'raleway';
+	src: url('@fonts/raleway-v28-latin-regular.woff2') format('woff2'),
+		url('@fonts/raleway-v28-latin-regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+$main-color: rgb(34, 28, 28);
+$second-color: #eee;
+
+body {
+	background-color: $main-color;
+	color: $second-color;
+	font-family: 'raleway';
+}
