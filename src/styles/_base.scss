@@ -8,7 +8,11 @@
 
 $main-color: rgb(34, 28, 28);
 $second-color: #eee;
-
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body {
 	background-color: $main-color;
 	color: $second-color;

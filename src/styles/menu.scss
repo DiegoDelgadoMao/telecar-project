@@ -1,0 +1,25 @@
+@import '_base';
+
+.menu-container{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px black solid ;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+.menu-left{
+    padding: 10px;
+}
+.menu-right ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.menu-right ul li {
+    padding-top: 20px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+.menu-right ul li a{
+    text-decoration: none;
+}
