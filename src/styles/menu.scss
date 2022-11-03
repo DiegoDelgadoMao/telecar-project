@@ -3,23 +3,37 @@
 .menu-container{
     display: flex;
     width: 100%;
-    border-bottom: 1px black solid ;
-    border-radius: 10px;
-    flex-wrap: wrap;
+    border: 1px black solid ;
+    justify-content: space-between;
 }
 .menu-left{
-    padding: 10px;
+    padding-left: 10px;
+    display: block;
+}
+.menu-left img{
+    padding: 5px;
+    width: 120px;
+    height: 50px;
+}
+.menu-right{
+    display: none;
+    width: 70%;
 }
 .menu-right ul{
     display: flex;
     list-style: none;
-    justify-content: space-between;
+    align-items: center;
 }
 .menu-right ul li {
-    padding-top: 20px;
-    margin-left: 100px;
-    margin-bottom: 20px;
+   padding: 10px;
 }
 .menu-right ul li a{
     text-decoration: none;
+}
+.menu-mobile{
+    padding-right: 5px;
+}
+.menu-mobile img{
+    padding: 5px;
+    width: 54px;
 }
