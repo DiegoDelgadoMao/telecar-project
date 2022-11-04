@@ -1,8 +1,13 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../styles/menu.scss'
 import logo from '../assets/images/logo.png';
 import iconMenu from '../assets/images/menus.png';
+import MenuMobile from '../components/menu-mobile';
 const Menu = () => {
+    const [toggle,setToggle] = useState(false);
+    const handleToggle = () => {
+        setToggle(!toggle)
+    }
     return(
         <div className ='menu-container'>
         <div className ='menu-left'>
@@ -16,8 +21,9 @@ const Menu = () => {
             </ul>
         </div>
         <div className ="menu-mobile">
-            <img src={iconMenu} alt="Menu"/>
+            <img src={iconMenu} alt="Menu" onClick={handleToggle} />
         </div>
+        {toggle && <MenuMobile/>}
     </div>
     )
 }

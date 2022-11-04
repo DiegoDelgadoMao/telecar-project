@@ -1,6 +1,9 @@
 @import '_base';
 
 .menu-mobilePage{
+    background-color: $main-color;
+    position: absolute;
+    top: 60px;
     width: 100%;
     border-bottom: 1px black solid;
 }
