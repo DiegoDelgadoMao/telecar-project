@@ -1,0 +1,60 @@
+@use './base';
+
+footer {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(160px, 300px));
+	justify-content: center;
+	grid-auto-rows: auto;
+	border-top: 1px solid base.$third-color;
+	padding: 20px 0px;
+	.contact {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		row-gap: 10px;
+		padding-left: 10px;
+		h3 {
+			font-size: 1.6rem;
+			font-weight: 900;
+		}
+		div {
+			color: base.$third-color;
+			display: flex;
+			flex-direction: column;
+			row-gap: 4px;
+		}
+		div h4 {
+			display: flex;
+			font-size: 1.2rem;
+			column-gap: 4px;
+			font-weight: 800;
+			align-items: center;
+		}
+		div h4 svg {
+			width: 2rem;
+			height: 2rem;
+		}
+		div p {
+			font-size: 1.1rem;
+			font-weight: 400;
+		}
+	}
+	.another {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		row-gap: 10px;
+		img {
+			width: 10rem;
+		}
+		p {
+			display: flex;
+			column-gap: 4px;
+			align-items: center;
+			color: base.$third-color;
+			font-size: 1.1rem;
+			font-weight: 900;
+		}
+	}
+}
