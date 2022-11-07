@@ -3,6 +3,7 @@ import '../styles/menu.scss'
 import logo from '../assets/images/logo.png';
 import iconMenu from '../assets/images/menus.png';
 import MenuMobile from '../components/menu-mobile';
+import tiendaImg from '../assets/images/tienda.png'
 const Menu = () => {
     const [toggle,setToggle] = useState(false);
     const handleToggle = () => {
@@ -15,9 +16,18 @@ const Menu = () => {
         </div>
         <div className ='menu-right'>
             <ul>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Productos</a></li>
+                <li><a href="#">
+                      <img src={tiendaImg} alt='tienda'/>
+                      <p>Productos</p>
+                    </a></li>
+                <li><a href="#">
+                      <img src={tiendaImg} alt='tienda'/>
+                      <p>Servicios</p>
+                    </a></li>
+                <li><a href="#">
+                      <img src={tiendaImg} alt='tienda'/>
+                      <p>Nosotros</p>
+                    </a></li>
             </ul>
         </div>
         <div className ="menu-mobile">

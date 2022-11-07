@@ -25,9 +25,12 @@
     align-items: center;
 }
 .menu-right ul li {
-   padding: 10px;
+    padding: 18px;
+   margin-right: 50px;
 }
 .menu-right ul li a{
+    display: flex;
+    justify-content: space-between;
     text-decoration: none;
 }
 .menu-mobile{
@@ -36,6 +39,13 @@
 .menu-mobile img{
     padding: 5px;
     width: 54px;
+}
+.menu-right ul li a img{
+    width: 15px;
+    margin-right: 5px;
+}
+.menu-right ul li a p{
+    font-size: $medium;
 }
 @media (min-width:640px){
     .menu-mobile{
