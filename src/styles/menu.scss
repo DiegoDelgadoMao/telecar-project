@@ -34,14 +34,15 @@
     text-decoration: none;
 }
 .menu-mobile{
-    padding-right: 5px;
+    padding: 10px;
 }
 .menu-mobile img{
     padding: 5px;
     width: 54px;
 }
-.menu-right ul li a img{
-    width: 15px;
+.menu-right ul li a svg{
+    width: 2rem;
+    height: 2rem;
     margin-right: 5px;
 }
 .menu-right ul li a p{

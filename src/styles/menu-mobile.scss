@@ -3,7 +3,7 @@
 .menu-mobilePage{
     background-color: $main-color;
     position: absolute;
-    top: 60px;
+    top: 55px;
     width: 100%;
     border-bottom: 1px black solid;
 }
@@ -21,4 +21,9 @@
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+@media (min-width:640px){
+    .menu-mobilePage{
+        display: none;
+    }
 }
