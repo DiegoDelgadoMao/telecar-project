@@ -1,0 +1,22 @@
+@use './base';
+
+.services-section {
+	width: 80%;
+	max-width: 500px;
+	margin: 0px auto;
+	h2 {
+		font-weight: 900;
+		font-size: 1.6rem;
+		color: base.$second-color;
+		margin: 4rem 0px 2rem 0px;
+	}
+	ul {
+		list-style: circle;
+		color: base.$third-color;
+		font-size: 1.4rem;
+		font-weight: 600;
+		li {
+			margin: 20px 0px;
+		}
+	}
+}
