@@ -1,9 +1,11 @@
 @import '_base';
 
 .menu-container {
+	background-color: $fond;
 	display: flex;
 	width: 100%;
-	// border: 1px black solid ;
+	border: 1px $fond solid ;
+	border-radius: 5px;
 	justify-content: space-between;
 }
 .menu-left {
