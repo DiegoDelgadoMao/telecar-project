@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import {RiStore2Line,RiHandHeartLine,RiTeamLine} from "react-icons/ri"
-import '../styles/menu.scss'
+import {RiStore2Line,RiHandHeartLine,RiTeamLine} from "react-icons/ri";
+import '../styles/menu.scss';
 import logo from '../assets/images/logo.png';
 import MenuMobile from '../components/menu-mobile';
 import MenuButton from '../components/menu-bottom';

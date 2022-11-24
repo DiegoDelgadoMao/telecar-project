@@ -1,6 +1,8 @@
 @import '_base';
 
 .menu-mobilePage{
+    display: flex;
+    justify-content: center;
     background-color: $main-color;
     position: absolute;
     top: 55px;
@@ -15,12 +17,16 @@
     margin-bottom: 22px;
 }
 .menu-mobilePage ul li{
-    margin-top: 22px ;
+    margin: 5px;
 }
 .menu-mobilePage ul li a{
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+.menu-mobilePage ul li svg{
+    width: 12px;
+    height: auto;
 }
 @media (min-width:640px){
     .menu-mobilePage{
