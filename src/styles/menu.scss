@@ -1,59 +1,58 @@
 @import '_base';
 
-.menu-container{
-    display: flex;
-    width: 100%;
-    border: 1px black solid ;
-    justify-content: space-between;
+.menu-container {
+	display: flex;
+	width: 100%;
+	// border: 1px black solid ;
+	justify-content: space-between;
 }
-.menu-left{
-    padding-left: 10px;
-    display: block;
+.menu-left {
+	padding-left: 10px;
+	display: block;
 }
-.menu-left img{
-    padding: 5px;
-    width: 120px;
-    height: 50px;
+.menu-left img {
+	padding: 5px;
+	width: 120px;
+	height: 50px;
 }
-.menu-right{
-    display: none;
-    width: 70%;
+.menu-right {
+	display: none;
+	width: 70%;
 }
-.menu-right ul{
-    display: flex;
-    list-style: none;
-    align-items: center;
+.menu-right ul {
+	display: flex;
+	list-style: none;
+	align-items: center;
 }
 .menu-right ul li {
-    padding: 18px;
-   margin-right: 50px;
+	padding: 18px;
+	margin-right: 50px;
 }
-.menu-right ul li a{
-    display: flex;
-    justify-content: space-between;
-    text-decoration: none;
+.menu-right ul li a {
+	display: flex;
+	justify-content: space-between;
+	text-decoration: none;
 }
-.menu-mobile{
-    padding: 10px;
+.menu-mobile {
+	padding: 10px;
 }
-.menu-mobile img{
-    padding: 5px;
-    width: 54px;
+.menu-mobile img {
+	padding: 5px;
+	width: 54px;
 }
-.menu-right ul li a svg{
-    width: 2rem;
-    height: 2rem;
-    margin-right: 5px;
+.menu-right ul li a svg {
+	width: 2rem;
+	height: 2rem;
+	margin-right: 5px;
 }
-.menu-right ul li a p{
-    font-size: $medium;
+.menu-right ul li a p {
+	font-size: $medium;
 }
-@media (min-width:640px){
-    .menu-mobile{
-        display: none;
-    }
-    .menu-right{
-        display: block;
-    }
-
+@media (min-width: 640px) {
+	.menu-mobile {
+		display: none;
+	}
+	.menu-right {
+		display: block;
+	}
 }
