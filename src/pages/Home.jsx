@@ -1,7 +1,17 @@
 import React from 'react';
-// import { connect } from '../firebase.js';
+import {docgetdata} from '../firebase.js';
 // import Reactimg from '@images/pasted-image-0-2.png';
+
 const Home = () => {
+	let dato;
+	 const saludar = async () => {
+		console.log('hola')
+		const data = await docgetdata('USxQSJnXigCUA7Ir8Zhc')
+		console.log(data.cost)
+		dato = data.cost;
+		
+	}
+	window.addEventListener('DOMContentLoaded',saludar())
 	return (
 		<>
 			<h1>Hello world!</h1>
@@ -10,8 +20,8 @@ const Home = () => {
 					<img src="#" alt="" />
 				</div>
 				<div>
-					<p className='cost'>$</p>
-					<p className='description'></p>
+					<p className='cost'>${dato}</p>
+					<p className='description'>{}</p>
 				</div>
 			</div>
 		</>

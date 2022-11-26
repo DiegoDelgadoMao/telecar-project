@@ -7,7 +7,7 @@ import MenuButton from '../components/menu-bottom';
 const Menu = () => {
     const [toggle,setToggle] = useState(false);
     const handleToggle = () => {
-        setToggle(!toggle)
+        setToggle(!toggle);
     }
     return(
         <div className ='menu-container'>
