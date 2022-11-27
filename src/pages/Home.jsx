@@ -1,27 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import {docgetdata} from '../firebase.js';
+import '@styles/produc.scss'
 // import Reactimg from '@images/pasted-image-0-2.png';
 
 const Home = () => {
-	let dato;
-	 const saludar = async () => {
-		console.log('hola')
-		const data = await docgetdata('USxQSJnXigCUA7Ir8Zhc')
-		console.log(data.cost)
-		dato = data.cost;
-		
-	}
-	window.addEventListener('DOMContentLoaded',saludar())
+	const [ cost, setCost ] = useState(0);
+	const [ desc, setdesc ] = useState('');
+	const [ img, setimg ] = useState('');
+	const [ name, setname ] = useState('');
+
+	useEffect(()=>{
+		async function getData(){
+		const dat =  await docgetdata('USxQSJnXigCUA7Ir8Zhc');
+		setCost(cost + dat.cost)
+		setdesc(desc + dat.description)
+		setimg(img + dat.img)
+		setname(name + dat.name)
+	    }
+       getData();
+	},[])
+
 	return (
 		<>
 			<h1>Hello world!</h1>
 			<div className='produc-Container'>
-				<div>
-					<img src="#" alt="" />
+				<div className='upart'>
+					<h2>{name}</h2>
+					<img src={img} alt="" />
 				</div>
 				<div>
-					<p className='cost'>${dato}</p>
-					<p className='description'>{}</p>
+					<p className='cost'>{cost}</p>
+					<p className='description'>{desc}</p>
 				</div>
 			</div>
 		</>
