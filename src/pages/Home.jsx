@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import {docgetdata} from '../firebase.js';
+import {getProduct,getAllproducts} from '../firebase.js';
 import '@styles/produc.scss'
 // import Reactimg from '@images/pasted-image-0-2.png';
 
@@ -11,7 +11,7 @@ const Home = () => {
 
 	useEffect(()=>{
 		async function getData(){
-		const dat =  await docgetdata('USxQSJnXigCUA7Ir8Zhc');
+		const dat =  await getProduct('USxQSJnXigCUA7Ir8Zhc');
 		setCost(cost + dat.cost)
 		setdesc(desc + dat.description)
 		setimg(img + dat.img)
