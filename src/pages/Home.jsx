@@ -1,38 +1,25 @@
 import React, { useEffect, useState} from 'react';
-import {getProduct,getAllproducts} from '../firebase.js';
+import {getProduct,getAllproducts,getUpdateProducts} from '../firebase.js';
 import '@styles/produc.scss'
+import OrderDetail from './ProductItem.jsx';
 // import Reactimg from '@images/pasted-image-0-2.png';
 
 const Home = () => {
-	const [ cost, setCost ] = useState(0);
-	const [ desc, setdesc ] = useState('');
-	const [ img, setimg ] = useState('');
-	const [ name, setname ] = useState('');
-
+	 const [products, setProducts] = useState()
 	useEffect(()=>{
 		async function getData(){
-		const dat =  await getProduct('USxQSJnXigCUA7Ir8Zhc');
-		setCost(cost + dat.cost)
-		setdesc(desc + dat.description)
-		setimg(img + dat.img)
-		setname(name + dat.name)
-	    }
-       getData();
+			const get = await getAllproducts();
+			get.forEach(doc => {
+				const data = doc.data();
+				console.log(data)})
+		}
+		getData();
 	},[])
 
 	return (
 		<>
 			<h1>Hello world!</h1>
-			<div className='produc-Container'>
-				<div className='upart'>
-					<h2>{name}</h2>
-					<img src={img} alt="" />
-				</div>
-				<div>
-					<p className='cost'>{cost}</p>
-					<p className='description'>{desc}</p>
-				</div>
-			</div>
+			{}
 		</>
 	)
 }
