@@ -1,3 +1,4 @@
 node_modules/
 dist/
 pruebas/
+src/styles/*.scss

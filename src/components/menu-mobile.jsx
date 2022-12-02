@@ -1,6 +1,6 @@
 import React from 'react';
 import {RiStore2Line,RiHandHeartLine,RiTeamLine} from 'react-icons/ri';
-import '../styles/menu-mobile.scss';
+// import '../styles/menu-mobile.scss';
 
 const MenuMobile = () => {
     return(

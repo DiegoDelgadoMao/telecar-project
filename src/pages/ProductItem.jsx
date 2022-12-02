@@ -1,5 +1,5 @@
 import React  from 'react';
-import '@styles/produc.scss';
+// import '@styles/produc.scss';
 
 const OrderDetail =({ product }) => {
     return(

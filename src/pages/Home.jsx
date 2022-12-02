@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getProduct, getAllproducts, getUpdateProducts } from '../firebase.js';
-import '@styles/produc.scss'
-import OrderDetail from './ProductItem.jsx';
+// import OrderDetail from './ProductItem.jsx';
+
 
 const Home = () => {
 	const [products, setProducts] = useState([])
@@ -22,7 +22,7 @@ const Home = () => {
 
 	return (
 		<>
-			<section className='container-products'>
+			<section className='bg-emerald-100'>
 				{
 					products.map((item, index) => (
 						<div className='product' key={`${item.name}-${index}`}>
