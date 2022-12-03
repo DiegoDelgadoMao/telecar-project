@@ -5,21 +5,29 @@ import OrderDetail from './ProductItem.jsx';
 // import Reactimg from '@images/pasted-image-0-2.png';
 
 const Home = () => {
-	 const [products, setProducts] = useState()
+	const [products,setProducts] = useState([])
+    
 	useEffect(()=>{
 		async function getData(){
 			const get = await getAllproducts();
-			get.forEach(doc => {
-				const data = doc.data();
-				console.log(data)})
+			const getProduct = []
+		 get.forEach(async doc=>{
+				getProduct.push(doc.data())
+				await setProducts(getProduct)
+			})
+			console.log(getProduct)
 		}
-		getData();
-	},[])
-
+			getData();
+			
+		},[])
 	return (
 		<>
 			<h1>Hello world!</h1>
-			{}
+			<div>
+				{products.map((product, index) => (
+					<OrderDetail product={product} key={index}/>
+				))}
+			</div>
 		</>
 	)
 }
