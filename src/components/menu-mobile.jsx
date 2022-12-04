@@ -1,31 +1,26 @@
-import React from 'react';
-import {RiStore2Line,RiHandHeartLine,RiTeamLine} from 'react-icons/ri';
-// import '../styles/menu-mobile.scss';
+import React, {useState} from 'react';
+import { RiMenuLine } from "react-icons/ri";
 
-const MenuMobile = () => {
-    return(
-        <div className="menu-mobilePage">
-            <ul>
-                <li>
-                    <a href="#">
-                      <RiStore2Line/>
-                      <p>Productos</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                       <RiHandHeartLine/>
-                       <p>Servicios</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                       <RiTeamLine/>
-                       <p>Nosotros</p>
-                    </a>
-                </li>
+export const MenuMobile = ({items})=>{
+    const [navMobile, setNavMobile] = useState(false);
+
+    const handleMenuNav = () => setNavMobile(!navMobile)
+
+    return (
+        <div className="container-menu-icon">
+            <RiMenuLine className='w-8 h-8' onClick={handleMenuNav}/>
+            <ul className={`${(!navMobile)? 'hidden' : ''} absolute bottom-[-208px] w-full h-52 left-0 bg-cyan-200 flex flex-col`} >
+                {
+                    items.map(item => (
+                        <li key={item.txt} className='hover:bg-cyan-300'>
+                            <a href="#" className='flex flex-row-reverse justify-end py-4 pl-3 gap-x-4 items-center text-cyan-900'>
+                                <span>{item.icon}</span>
+                                <p className='font-bold uppercase text-xs'>{item.txt}</p>
+                            </a>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     )
 }
-export default MenuMobile;

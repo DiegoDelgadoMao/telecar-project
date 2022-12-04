@@ -22,7 +22,7 @@ const Home = () => {
 
 	return (
 		<>
-			<section className='bg-emerald-100'>
+			<section className=''>
 				{
 					products.map((item, index) => (
 						<div className='product' key={`${item.name}-${index}`}>
