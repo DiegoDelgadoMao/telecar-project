@@ -4,37 +4,29 @@ import { getProduct, getAllproducts, getUpdateProducts } from '../firebase.js';
 
 
 const Home = () => {
-	const [products, setProducts] = useState([])
+	const [products,setProducts] = useState([])
 
-	useEffect(() => {
-		async function getData() {
-			const query = await getAllproducts();
-			const mainProducts = []
-
-			query.forEach(doc => {
-				mainProducts.push(doc.data())
-				setProducts(mainProducts)
+	useEffect(()=>{
+		async function getData(){
+			const get = await getAllproducts();
+			const getProduct = []
+		 get.forEach(async doc=>{
+				getProduct.push(doc.data())
+				await setProducts(getProduct)
 			})
+			console.log(getProduct)
 		}
-		console.log(products)
-		getData();
-	}, [])
-
+			getData();
+			
+		},[])
 	return (
 		<>
-			<section className=''>
-				{
-					products.map((item, index) => (
-						<div className='product' key={`${item.name}-${index}`}>
-							<h2>{item.name}</h2>
-							<p>{item.description}</p>
-							<h3>{item.cost}</h3>
-							<img src="{item.img}" alt="" />
-						</div>
-					))
-				}
-			</section>
-
+			<h1>Hello world!</h1>
+			<div>
+				{products.map((product, index) => (
+					<OrderDetail product={product} key={index}/>
+				))}
+			</div>
 		</>
 	)
 }
