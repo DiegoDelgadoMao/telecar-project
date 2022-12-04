@@ -1,32 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { getProduct, getAllproducts, getUpdateProducts } from '../firebase.js';
-// import OrderDetail from './ProductItem.jsx';
+import { getAllproducts } from '../firebase.js';
+import {OrderDetail} from '../components/ProductItem.jsx';
 
 
 const Home = () => {
-	const [products,setProducts] = useState([])
+	const [products, setProducts] = useState([])
+	const [loading, setLoading] = useState(true)
 
-	useEffect(()=>{
-		async function getData(){
-			const get = await getAllproducts();
-			const getProduct = []
-		 get.forEach(async doc=>{
-				getProduct.push(doc.data())
-				await setProducts(getProduct)
-			})
-			console.log(getProduct)
+	useEffect(() => {
+		async function getData() {
+			const response = await getAllproducts();
+			const data = [];
+			response.forEach(doc => data.push(doc.data()))
+			setLoading(!loading)
+			setProducts(data)
 		}
-			getData();
-			
-		},[])
+		getData();
+	}, [])
 	return (
 		<>
-			<h1>Hello world!</h1>
-			<div>
-				{products.map((product, index) => (
-					<OrderDetail product={product} key={index}/>
-				))}
-			</div>
+			{
+				(loading)
+					? <p>loading data...</p>
+					: <div>
+						{products.map((product, index) => (
+							<OrderDetail product={product} key={index} />
+						))}
+					</div>
+			}
 		</>
 	)
 }
