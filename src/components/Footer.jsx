@@ -5,9 +5,9 @@ import logo from '../assets/images/logo.png'
 
 export const Footer = () => {
 	return (
-		<footer className='bg-lime-200 flex flex-col py-7 gap-6'>
+		<footer className='bg-fourth flex flex-col py-7 gap-6 shadow'>
 			<div className="pl-6">
-				<h3 className='font-bold text-lg mb-6'>Contactenos</h3>
+				<h3 className='font-bold text-second drop-shadow-second text-xl mb-6'>Contactenos</h3>
 				<div className="font-light mb-5">
 					<h4 className='flex items-center gap-2 mb-2 font-medium'>
 						<RiPhoneLine className='w-5 h-5'/>

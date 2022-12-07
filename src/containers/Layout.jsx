@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer';
 
 const Layout = ({ children }) => {
 	return (
-		<div className="Layout">
+		<div className="bg-background">
 			<Menu />
 			{children}
 			<Footer />
