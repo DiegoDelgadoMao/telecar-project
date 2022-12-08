@@ -6,6 +6,9 @@ module.exports = {
       dropShadow: {
         'FifthLight': '1px 1px 4px #8B918F',
         'second': '1px 1px 4px #52C0F8',
+      },
+      gridTemplateColumns: {
+        'outstading': 'repeat(5, minmax(170px, 180px))'
       }
     },
     colors: {

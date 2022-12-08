@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .sub-titles {
+        @apply text-xl flex items-center gap-2 font-black my-6;
+    }
+}
