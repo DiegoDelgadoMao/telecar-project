@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { getAllproducts } from '../firebase.js';
 import { OrderDetail } from '../components/ProductItem.jsx';
 
+import "../styles/swiper.css";
+
 import { RiFireFill, RiDashboardFill } from "react-icons/ri";
+import Appswiperjs from '../swiper.jsx';
+import AppSlider from '../swiper.jsx';
 
 
 const Home = () => {
@@ -28,6 +32,7 @@ const Home = () => {
 	}, [])
 	return (
 		<>
+		    <AppSlider/>
 			<section className='w-10/12 mx-auto'>
 				<h2 className='sub-titles txt-fifth'>
 					<RiFireFill />
@@ -46,6 +51,7 @@ const Home = () => {
 				</h2>
 				<div className='w-full grid grid-cols-[repeat(auto-fit, minmax(180px,190px))]'></div>
 			</section>
+			
 		</>
 	)
 }
