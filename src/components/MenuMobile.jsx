@@ -13,7 +13,7 @@ export const MenuMobile = ({items})=>{
                     ? <RiMenuLine className='w-8 h-8' onClick={handleMenuNav}/>
                     : <RiCloseLine className='w-8 h-8' onClick={handleMenuNav} />
             }
-            <ul className={`${(!navMobile)? 'hidden' : ''} z-[1] bg-fourth absolute bottom-[-208px] w-full h-52 left-0 bg-cyan-200 flex flex-col`} >
+            <ul className={`${(!navMobile)? 'hidden' : ''} z-[2] bg-fourth absolute bottom-[-208px] w-full h-52 left-0 bg-cyan-200 flex flex-col`} >
                 {
                     items.map(item => (
                         <li key={item.txt} className='hover:bg-cyan-300'>

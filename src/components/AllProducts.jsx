@@ -1,7 +1,7 @@
 import React from 'react';
 import { RiShoppingCart2Fill } from "react-icons/ri";
 
-export const OrderDetail = ({ product }) => {
+export const AllProducts = ({ product }) => {
 	return (
 		<div key={`${product.name}-${product.id}-all`} className='bg-[#e2e9ee] text-fifth shadow-lg rounded-md'>
 			<div className='w-full h-2/4 grid place-items-center'>

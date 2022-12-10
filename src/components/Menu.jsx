@@ -3,10 +3,10 @@ import { RiStore2Line, RiHandHeartLine, RiTeamLine } from "react-icons/ri";
 
 import logo from '../assets/images/logo.png'
 
-import { MenuMobile } from '../components/menu-mobile';
-import { MenuDesktop } from '../components/menu-desktop';
+import { MenuMobile } from './MenuMobile';
+import { MenuDesktop } from './MenuDesktop';
 
-const Menu = () => {
+export const Menu = () => {
     const [mobile, setMobile] = useState(null)
 
     const list = [
@@ -45,5 +45,3 @@ const Menu = () => {
         </nav>
     )
 }
-
-export default Menu;
