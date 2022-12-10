@@ -3,12 +3,13 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      dropShadow: {
+      boxShadow: {
         'FifthLight': '1px 1px 4px #8B918F',
-        'second': '1px 1px 4px #52C0F8',
+        'second': '1px 1px 10px #52C0F8',
       },
       gridTemplateColumns: {
-        'outstading': 'repeat(5, minmax(170px, 180px))'
+        'outstading': 'repeat(5, minmax(170px, 180px))',
+        'allproducts': 'repeat(auto-fit, minmax(180px,200px))'
       }
     },
     colors: {

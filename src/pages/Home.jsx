@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getAllproducts } from '../firebase.js';
 import { OrderDetail } from '../components/ProductItem.jsx';
+import { OutstadingProducts } from '../components/OutstadingProducts.jsx';
+import { Searcher } from '../components/Searcher.jsx';
 
 import { RiFireFill, RiDashboardFill } from "react-icons/ri";
 
@@ -23,6 +25,7 @@ const Home = () => {
 				newOutstading.push(data[i])
 			}
 			setOutstading(newOutstading)
+			console.log(data)
 		}
 		getData();
 	}, [])
@@ -33,18 +36,27 @@ const Home = () => {
 					<RiFireFill />
 					Destacados
 				</h2>
-				<div className='py-2 grid grid-cols-outstading auto-rows-[240px] max-w-7xl overflow-x-auto gap-5'>
-					{outstading.map((product, index) => (
-						<OrderDetail product={product} key={index} />
+				<div className='grid grid-flow-col gap-3 auto-cols-[minmax(240px,250px)] auto-rows-[160px] overflow-x-auto overscroll-x-contain px-2 py-4'>
+					{outstading.map((product) => (
+						<OutstadingProducts product={product}/>
 					))}
 				</div>
 			</section>
-			<section className='w-10/12 mx-auto'>
+
+			<Searcher />
+
+			<section className='w-10/12 mx-auto mb-10'>
 				<h2 className='sub-titles txt-fifth'>
 					<RiDashboardFill />
 					Todos los productos
 				</h2>
-				<div className='w-full grid grid-cols-[repeat(auto-fit, minmax(180px,190px))]'></div>
+				<div className='w-full grid grid-cols-allproducts gap-4 auto-rows-[250px] justify-center'>
+					{
+						products.map((product) => (
+							<OrderDetail product={product} />
+						))
+					}
+				</div>
 			</section>
 		</>
 	)
