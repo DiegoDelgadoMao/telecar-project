@@ -4,7 +4,11 @@ import { OrderDetail } from '../components/ProductItem.jsx';
 import { OutstadingProducts } from '../components/OutstadingProducts.jsx';
 import { Searcher } from '../components/Searcher.jsx';
 
+import "../styles/swiper.css";
+
 import { RiFireFill, RiDashboardFill } from "react-icons/ri";
+import Appswiperjs from '../swiper.jsx';
+import AppSlider from '../swiper.jsx';
 
 
 const Home = () => {
@@ -31,6 +35,7 @@ const Home = () => {
 	}, [])
 	return (
 		<>
+		    <AppSlider/>
 			<section className='w-10/12 mx-auto'>
 				<h2 className='sub-titles txt-fifth'>
 					<RiFireFill />
@@ -58,6 +63,7 @@ const Home = () => {
 					}
 				</div>
 			</section>
+			
 		</>
 	)
 }
