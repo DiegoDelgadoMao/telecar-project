@@ -12,15 +12,18 @@ export const Menu = () => {
     const list = [
         {
             txt: 'productos',
-            icon: <RiStore2Line className='w-6 h-6'/>
+            icon: <RiStore2Line className='w-6 h-6'/>,
+            url: '/'
         },
         {
             txt: 'servicios',
-            icon: <RiHandHeartLine className='w-6 h-6'/>
+            icon: <RiHandHeartLine className='w-6 h-6'/>,
+            url: '/servicios'
         },
         {
             txt: 'nosotros',
-            icon: <RiTeamLine className='w-6 h-6'/>
+            icon: <RiTeamLine className='w-6 h-6'/>,
+            url: '/nosotros'
         }
     ]
 

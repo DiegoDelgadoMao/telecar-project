@@ -11,7 +11,7 @@ export const OutstadingProducts = ({product}) => {
                 <p className='text-2xl font-black'>${product.cost}</p>
                 <h2 className='text-sm font-normal'>{product.name}</h2>
                 <button className='w-full h-9 flex justify-evenly place-items-center bg-third rounded-xl text-fourth'>
-                    comprar
+                    Ver
                     <RiShoppingCart2Fill />
                 </button>
             </div>
