@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useReducer } from 'react';
 
 import { getAllproducts } from '../firebase.js';
+
 import { AllProducts } from '../components/AllProducts';
-import { OutstadingProducts } from '../components/OutstadingProducts.jsx';
+
+import { Loading } from '../components/Loading.jsx';
 import { Searcher } from '../components/Searcher.jsx';
 
 import { RiFireFill, RiDashboardFill } from "react-icons/ri";
@@ -15,9 +17,6 @@ import { ModalInfo } from '../components/ModalInfo.jsx';
 const Home = () => {
 	const [state, dispatch] = useReducer(reducer, initialState)
 
-	const [products, setProducts] = useState([])
-	const [outstading, setOutstading] = useState([])
-
 	useEffect(() => {
 		async function getData() {
 			const response = await getAllproducts();
@@ -25,21 +24,20 @@ const Home = () => {
 			response.forEach(doc => data.push(doc.data()))
 
 			dispatch({ type: 'LOADED' })
-
-			setProducts(data)
+			dispatch({type: 'CHANGE_PRODUCTS', payload: data})
 
 			let newOutstading = []
 			for (let i = 0; i < 5; i++) {
 				newOutstading.push(data[i])
 			}
-			setOutstading(newOutstading)
+			dispatch({type: 'CHANGE_OUTSTADING', payload: newOutstading})
 			console.log(data)
 		}
 		getData();
 	}, [])
-	useEffect(() => { }, [state])
+
 	if (state.loading) {
-		return <h1>LOADING...</h1>
+		return <Loading/>
 	} else {
 		return (
 			<>
@@ -57,8 +55,8 @@ const Home = () => {
 						Destacados
 					</h2>
 					<div className='grid grid-flow-col gap-3 auto-cols-[minmax(180px,200px)] auto-rows-[250px] overflow-x-auto overscroll-x-contain px-2 py-4'>
-						{outstading.map((product) => (
-							<OutstadingProducts product={product} />
+						{state.outstading.map((product) => (
+							<AllProducts product={product} dispatch={dispatch}/>
 						))}
 					</div>
 				</section>
@@ -72,8 +70,8 @@ const Home = () => {
 					</h2>
 					<div className='w-full grid grid-cols-allproducts gap-4 auto-rows-[250px] justify-center'>
 						{
-							products.map((product) => (
-								<AllProducts product={product} productNow={state.productModal} dispatch={dispatch} showModal={state.modalInfo} />
+							state.mainProducts.map((product) => (
+								<AllProducts product={product} dispatch={dispatch}/>
 							))
 						}
 					</div>
