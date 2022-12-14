@@ -56,6 +56,7 @@ const Home = () => {
 					</h2>
 					<div className='grid grid-flow-col gap-3 auto-cols-[minmax(180px,200px)] auto-rows-[250px] overflow-x-auto overscroll-x-contain px-2 py-4'>
 						{state.outstading.map((product) => (
+							console.log(product),
 							<AllProducts product={product} dispatch={dispatch}/>
 						))}
 					</div>
