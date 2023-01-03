@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useReducer } from 'react';
 
-import { getAllproducts } from '../firebase.js';
-
 import { AllProducts } from '../components/AllProducts';
 
 import { Loading } from '../components/Loading.jsx';
@@ -10,34 +8,20 @@ import { Searcher } from '../components/Searcher.jsx';
 import { RiFireFill, RiDashboardFill } from "react-icons/ri";
 import AppSlider from '../components/swiper';
 
-import { reducer, initialState } from '../reducers/index.js';
-
 import { ModalInfo } from '../components/ModalInfo.jsx';
+import { Brands } from '../components/Brands.jsx';
+
+import { useProducts } from '../hooks/useProducts';
 
 const Home = () => {
-	const [state, dispatch] = useReducer(reducer, initialState)
+	const hook = useProducts()
 
 	useEffect(() => {
-		async function getData() {
-			const response = await getAllproducts();
-			const data = [];
-			response.forEach(doc => data.push(doc.data()))
-
-			dispatch({ type: 'LOADED' })
-			dispatch({type: 'CHANGE_PRODUCTS', payload: data})
-
-			let newOutstading = []
-			for (let i = 0; i < 5; i++) {
-				newOutstading.push(data[i])
-			}
-			dispatch({type: 'CHANGE_OUTSTADING', payload: newOutstading})
-			console.log(data)
-		}
-		getData();
+		console.log('data from Home component',hook)
 	}, [])
 
-	if (state.loading) {
-		return <Loading/>
+	if (true) {
+		return <Loading />
 	} else {
 		return (
 			<>
@@ -54,12 +38,15 @@ const Home = () => {
 						<RiFireFill />
 						Destacados
 					</h2>
-					<div className='grid grid-flow-col gap-3 auto-cols-[minmax(180px,200px)] auto-rows-[250px] overflow-x-auto overscroll-x-contain px-2 py-4'>
+					<div className='grilla-products'>
 						{state.outstading.map((product) => (
-							<AllProducts product={product} dispatch={dispatch}/>
+							<AllProducts product={product} dispatch={dispatch} />
 						))}
+
 					</div>
 				</section>
+
+				<Brands/>
 
 				<Searcher />
 
@@ -68,10 +55,24 @@ const Home = () => {
 						<RiDashboardFill />
 						Todos los productos
 					</h2>
-					<div className='w-full grid grid-cols-allproducts gap-4 auto-rows-[250px] justify-center'>
+					<div className='grilla-products'>
 						{
 							state.mainProducts.map((product) => (
-								<AllProducts product={product} dispatch={dispatch}/>
+								<AllProducts product={product} dispatch={dispatch} />
+							))
+						}
+					</div>
+				</section>
+
+				<section className='w-10/12 mx-auto mb-10'>
+					<h2 className='sub-titles txt-fifth'>
+						<RiDashboardFill />
+						Productos Motorola
+					</h2>
+					<div className='grilla-products'>
+						{
+							state.mainProducts.map((product) => (
+								<AllProducts product={product} dispatch={dispatch} />
 							))
 						}
 					</div>

@@ -4,7 +4,7 @@ import '../styles/loader.css'
 export const Loading = () => {
     return (
         <div className='w-full grid place-items-center bg-fourth h-screen'>
-            <span class="loader"></span>
+            <span className="loader"></span>
         </div>
     )
 }

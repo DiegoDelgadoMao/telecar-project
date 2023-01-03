@@ -3,7 +3,10 @@ export const initialState={
     modalInfo: false,
     productModal: {},
     mainProducts: [],
-    outstading: []
+    outstading: [],
+    motorola: [],
+    hytera: [],
+    vertex: [],
 }
 
 const reducerObject = (state, payload)=>({
@@ -11,7 +14,10 @@ const reducerObject = (state, payload)=>({
     'CLOSE_MODAL': {...state, modalInfo: false},
     'LOADED': {...state, loading: false},
     'CHANGE_PRODUCTS': {...state, mainProducts: payload},
-    'CHANGE_OUTSTADING': {...state, outstading: payload}
+    'CHANGE_OUTSTADING': {...state, outstading: payload},
+    'CHANGE_MOTOROLA': {...state, motorola: payload},
+    'CHANGE_HYTERA': {...state, hytera: payload},
+    'CHANGE_VERTEX': {...state, vertex: payload},
 })
 
 export const reducer = (state,action)=>{

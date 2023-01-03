@@ -6,4 +6,7 @@
     .sub-titles {
         @apply text-xl flex items-center gap-2 font-black my-6;
     }
+    .grilla-products{
+        @apply grid grid-flow-col gap-3 auto-cols-[minmax(170px,190px)] auto-rows-[250px] overflow-x-scroll overscroll-x-contain px-2 py-4
+    }
 }

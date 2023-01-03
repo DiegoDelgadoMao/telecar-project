@@ -8,7 +8,7 @@ export const AllProducts = ({ product, dispatch}) => {
 
 	return (
 		<>
-			<div key={`${product.name}-${product.id}-all`} className='bg-[#e2e9ee] text-fifth shadow-lg rounded-md'>
+			<div key={`${product.name}-${product.id}-all`} className='bg-fourth text-fifth shadow-lg rounded-lg'>
 				<div className='w-full h-3/5 grid place-items-center'>
 					<img src={product.img} alt="image product" className='w-28 h-28' onClick={displayModal} />
 				</div>
