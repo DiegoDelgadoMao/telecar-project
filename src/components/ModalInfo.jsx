@@ -15,7 +15,7 @@ export const ModalInfo = ({ product, dispatch }) => {
                     </div>
                     <div className='w-4/5 mx-auto flex flex-col gap-2'>
                         <h1 className='txt-3xl font-extrabold'>{product.name}</h1>
-                        <h2 className='txt-sm font-thin'>{product.marca}</h2>
+                        <h2 className='txt-sm font-thin'>{product.brand}</h2>
                         <p className='txt-xs leading-5 font-ligth'>{product.description}</p>
                         <div>
                             <h3 className='txt-2xl font-semibold mt-4 mb-1'>Caracteristicas:</h3>
